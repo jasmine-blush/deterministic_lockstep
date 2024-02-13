@@ -1,0 +1,16 @@
+Client Connects:	1.0.0.0.0.0.0.0
+
+Server sends ID:	1.0.0.0.0.0.0.0 + ID(ex. 3) = 1.0.0.0.0.0.1.1
+
+Server sends positions:
+	0.0.0.0.0.0.0.1 + {humanID} + {frameID} + {Position.X} + {Position.Y}
+	1 byte          + 1 byte    + 4 bytes   + 4 bytes      + 4 bytes
+
+Client sends input frames:
+	0.0.0.0.0.0.1.0 + {InputFrame}
+	1 byte 			+ 9 bytes
+	
+	InputFrame = {frameID} + {gameTime} + {KeyCodes}
+				 4 bytes   + 4 bytes    + 1 byte
+				 
+	KeyCodes = 0.0.0.0.0(Key_D).0(Key_S).0(Key_A).0(Key_W)
